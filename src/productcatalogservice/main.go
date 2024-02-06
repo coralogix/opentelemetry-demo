@@ -32,6 +32,7 @@ import (
 	sdkresource "go.opentelemetry.io/otel/sdk/resource"
 	sdktrace "go.opentelemetry.io/otel/sdk/trace"
 	"go.opentelemetry.io/otel/trace"
+	sampler "github.com/coralogix/coralogix-opentelemetry-go/sampler"
 
 	"google.golang.org/protobuf/encoding/protojson"
 
@@ -81,6 +82,7 @@ func initTracerProvider() *sdktrace.TracerProvider {
 	tp := sdktrace.NewTracerProvider(
 		sdktrace.WithBatcher(exporter),
 		sdktrace.WithResource(initResource()),
+		sdktrace.WithSampler(sampler.NewCoralogixSampler(sdktrace.AlwaysSample())),
 	)
 	otel.SetTracerProvider(tp)
 	otel.SetTextMapPropagator(propagation.NewCompositeTextMapPropagator(propagation.TraceContext{}, propagation.Baggage{}))

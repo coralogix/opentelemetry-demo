@@ -21,6 +21,7 @@ import (
 	"go.opentelemetry.io/otel/propagation"
 	sdkresource "go.opentelemetry.io/otel/sdk/resource"
 	sdktrace "go.opentelemetry.io/otel/sdk/trace"
+	sampler "github.com/coralogix/coralogix-opentelemetry-go/sampler"
 
 	"github.com/open-telemetry/opentelemetry-demo/src/accountingservice/kafka"
 )
@@ -70,6 +71,7 @@ func initTracerProvider() (*sdktrace.TracerProvider, error) {
 	tp := sdktrace.NewTracerProvider(
 		sdktrace.WithBatcher(exporter),
 		sdktrace.WithResource(initResource()),
+		sdktrace.WithSampler(sampler.NewCoralogixSampler(sdktrace.AlwaysSample())),
 	)
 	otel.SetTracerProvider(tp)
 	otel.SetTextMapPropagator(propagation.NewCompositeTextMapPropagator(propagation.TraceContext{}, propagation.Baggage{}))
