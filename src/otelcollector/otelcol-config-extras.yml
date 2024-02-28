@@ -8,11 +8,22 @@
 ## Note: the spanmetrics exporter must be included in the exporters array
 ## if overriding the traces pipeline.
 ##
-#  exporters:
-#    otlphttp/example:
-#      endpoint: <your-endpoint-url>
-#
-#  service:
-#    pipelines:
-#      traces:
-#        exporters: [spanmetrics, otlphttp/example]
+exporters:
+  coralogix:
+    domain: "cx498.coralogix.com"
+    private_key: "cxtp_WCX7uKK7H76gGLdL523AJf9037lx42"
+    application_name_attributes:
+    - "service.namespace"
+    subsystem_name_attributes:
+    - "service.name"
+    application_name: "MyBusinessEnvironment"
+    subsystem_name: "MyBusinessSystem"
+
+service:
+  pipelines:
+    traces:
+      exporters: [spanmetrics, coralogix]
+    metrics:
+      exporters: [coralogix]
+    logs:
+      exporters: [coralogix]
