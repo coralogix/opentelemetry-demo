@@ -16,9 +16,14 @@ from opentelemetry._logs import set_logger_provider
 from opentelemetry.exporter.otlp.proto.grpc._log_exporter import (
     OTLPLogExporter,
 )
+from opentelemetry.exporter.otlp.proto.grpc.trace_exporter import OTLPSpanExporter
+
 from opentelemetry.sdk._logs import LoggerProvider, LoggingHandler
 from opentelemetry.sdk._logs.export import BatchLogRecordProcessor
 from opentelemetry.sdk.resources import Resource
+from opentelemetry.sdk.trace import TracerProvider
+from opentelemetry.sdk.trace.export import BatchSpanProcessor
+from coralogix_opentelemetry.trace.samplers import CoralogixTransactionSampler
 
 # Local
 import logging
@@ -33,7 +38,6 @@ from metrics import (
 
 cached_ids = []
 first_run = True
-
 
 class RecommendationService(demo_pb2_grpc.RecommendationServiceServicer):
     def ListRecommendations(self, request, context):
@@ -125,6 +129,11 @@ def check_feature_flag(flag_name: str):
 
 if __name__ == "__main__":
     service_name = must_map_env('OTEL_SERVICE_NAME')
+
+    # Initiatlize Traces
+    tracer_provider = TracerProvider(sampler=CoralogixTransactionSampler())
+    trace.set_tracer_provider(tracer_provider)
+    tracer_provider.add_span_processor(BatchSpanProcessor(OTLPSpanExporter()))
 
     # Initialize Traces and Metrics
     tracer = trace.get_tracer_provider().get_tracer(service_name)

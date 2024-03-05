@@ -11,9 +11,11 @@ const {awsEc2Detector, awsEksDetector} = require('@opentelemetry/resource-detect
 const {containerDetector} = require('@opentelemetry/resource-detector-container')
 const {gcpDetector} = require('@opentelemetry/resource-detector-gcp')
 const {envDetector, hostDetector, osDetector, processDetector} = require('@opentelemetry/resources')
+const {CoralogixTransactionSampler} = require('@coralogix/opentelemetry');
 
 const sdk = new opentelemetry.NodeSDK({
   traceExporter: new OTLPTraceExporter(),
+  sampler: new CoralogixTransactionSampler(),
   instrumentations: [
     getNodeAutoInstrumentations({
       // only instrument fs if it is part of another trace
