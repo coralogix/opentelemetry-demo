@@ -169,7 +169,7 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ${{ env.DOCKERHUB_REPO }}:${{ inputs.version }}-${{matrix.file_tag.tag_suffix }}
+            ${{ env.DOCKERHUB_REPO }}:dev-${{matrix.file_tag.tag_suffix }}
             ${{ env.DOCKERHUB_REPO }}:latest-${{matrix.file_tag.tag_suffix }}
           cache-from: type=gha
           cache-to: type=gha
